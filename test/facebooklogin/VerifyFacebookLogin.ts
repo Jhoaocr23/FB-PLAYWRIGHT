@@ -16,7 +16,7 @@ export class VerifyFacebookLogin {
     static failed = () =>
         Task.where('#actor verifica que el login sea incorrecto',
             VerifyFacebookLogin.hasMessageError(),
-            Ensure.that(Text.of(MessageError.messageAlert()), includes('La contraseña que ingresaste es incorrecta.'))
+            Ensure.that(Text.of(MessageError.messageAlert()), includes('Credenciales incorrectas'))
         )
 }
 const LoginSucces = {
@@ -25,5 +25,5 @@ const LoginSucces = {
 }
 const MessageError = {
     messageAlert: () =>
-        PageElement.located(By.xpath('/html/body/div[1]/div[1]/div[1]/div/div[2]/div[2]/form/div/div[2]/div[2]')).describedAs('La contraseña que ingresaste es incorrecta.')
+        PageElement.located(By.xpath('//*[@id="error_box"]/div[1]')).describedAs('Credenciales incorrectas')
 }

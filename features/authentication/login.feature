@@ -12,7 +12,7 @@ Feature: Automatización de Facebook
 
     Examples:
       | username       | password | outcome |
-      | test@gmail.com | blablab  | failed  |
+      | jhoasdasdasd@gmail.com | blabkjhlab  | failed  |
 
   Scenario Outline: Flujo Completo: Inicio de Sesión y Dar "Me gusta" a un Post
     When el va insertar al login "<username>" y "<password>"
